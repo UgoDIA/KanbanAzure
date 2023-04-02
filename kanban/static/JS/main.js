@@ -221,7 +221,7 @@ fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
     });
     console.log(taches.length)
       KanbanTest.addElement("board1",{
-        title:"Nouvelle Tâche"+`<button id="editTache" data-ID=${maxId+1} type="button">M<i class="bi bi-pencil-square"></i></button>`,
+        title:"Nouvelle Tâche"+`<button id="editTache" data-ID=${maxId+1} type="button"><i class="bi bi-pencil-square"></i></button>`,
         'id': maxId+1,
         'titre':"Nouvelle Tâche",
       },count)
