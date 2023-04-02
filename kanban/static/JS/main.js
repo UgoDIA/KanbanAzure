@@ -52,7 +52,7 @@ var KanbanTest = new jKanban({
       });
       // console.log(disco);
       disco.forEach(col=>{
-        fetch(`http://127.0.0.1:8000/kanban/api/colonnes/${col.id_colonne}/`,{
+        fetch(`https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/${col.id_colonne}/`,{
           method:'POST',
           headers:{
             'content-type':'application/json',
@@ -84,7 +84,7 @@ var KanbanTest = new jKanban({
       console.log(dicta)
 
       dicta.forEach(tache=>{
-        fetch(`http://127.0.0.1:8000/kanban/api/taches/${tache.id_tache}/`,{
+        fetch(`https://ugoyinkanban.azurewebsites.net/kanban/api/taches/${tache.id_tache}/`,{
           method:'POST',
           headers:{
             'content-type':'application/json',
@@ -132,7 +132,7 @@ var KanbanTest = new jKanban({
       });
       console.log(dicta)
       
-      fetch(`http://127.0.0.1:8000/kanban/api/colonnes/${idColonne}/`,{
+      fetch(`https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/${idColonne}/`,{
         method:'POST',
         headers:{
           'content-type':'application/json',
@@ -159,7 +159,7 @@ var KanbanTest = new jKanban({
   
   });
 
-fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
+fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
   .then((resp)=>resp.json())
   .then(function(colonneData){
     colonneData.forEach(item => {
@@ -172,7 +172,7 @@ fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
       ]);
     })
   
-    fetch('http://127.0.0.1:8000/kanban/api/taches/')
+    fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/taches/')
     .then((resp)=>resp.json())
     .then(function(tachesData){  
       // console.log(tachesData)
@@ -204,7 +204,7 @@ fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
   var addTache= document.getElementById("addTache");
   addTache.addEventListener('click', function(){
   
-    fetch('http://127.0.0.1:8000/kanban/api/taches/')
+    fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/taches/')
     .then((resp)=>resp.json())
     .then(function(taches){
       let count = 0;
@@ -225,7 +225,7 @@ fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
         'id': maxId+1,
         'titre':"Nouvelle Tâche",
       },count)
-      fetch('http://127.0.0.1:8000/kanban/api/taches/',{
+      fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/taches/',{
         method:'POST',
         headers:{
           'content-type':'application/json',
@@ -257,7 +257,7 @@ fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
     submitButton.addEventListener("click", function(){
       console.log(formColonne.value)
       closePopup()
-      fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
+      fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
       .then((resp)=>resp.json())
       .then(function(colonneData){
         count=colonneData.length
@@ -275,7 +275,7 @@ fetch('http://127.0.0.1:8000/kanban/api/colonnes/')
           }
         ]);
     
-        fetch('http://127.0.0.1:8000/kanban/api/colonnes/',{
+        fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/',{
           method:'POST',
           headers:{
             'content-type':'application/json',
@@ -317,7 +317,7 @@ function editTache(dataId){
   function submitHandler() {
     console.log(formColonne.value)
     closePopup()
-    fetch(`http://127.0.0.1:8000/kanban/api/taches/${dataId}/`)
+    fetch(`https://ugoyinkanban.azurewebsites.net/kanban/api/taches/${dataId}/`)
     .then((resp)=>resp.json())
     .then(function(tacheData){
       console.log(tacheData)
@@ -333,7 +333,7 @@ function editTache(dataId){
         });
       }
     
-      fetch(`http://127.0.0.1:8000/kanban/api/taches/${dataId}/`,{
+      fetch(`https://ugoyinkanban.azurewebsites.net/kanban/api/taches/${dataId}/`,{
         method:'POST',
         headers:{
           'content-type':'application/json',
