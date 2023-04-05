@@ -262,6 +262,7 @@ fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
       .then(function(colonneData){
         count=colonneData.length
         let maxId = 0;
+        let newId=maxId+1
         colonneData.forEach((item) => {
           if (item.id_colonne > maxId) {
             maxId = item.id_colonne;
@@ -269,7 +270,7 @@ fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
         });
         KanbanTest.addBoards([
           {
-            'id': "board"+maxId+1,
+            'id': "board"+newId,
             'title': formColonne.value,
             'class':"info",
           }
