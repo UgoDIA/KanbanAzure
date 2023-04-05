@@ -232,6 +232,7 @@ fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
           'X-CSRFToken':csrftoken,
         },
         body:JSON.stringify({
+          "id_tache":maxId+1,
           "titre_tache": "Nouvelle Tâche",
           "ordre": count+1,
           "id_colonne": 1
