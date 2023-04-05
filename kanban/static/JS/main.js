@@ -262,12 +262,13 @@ fetch('https://ugoyinkanban.azurewebsites.net/kanban/api/colonnes/')
       .then(function(colonneData){
         count=colonneData.length
         let maxId = 0;
-        let newId=maxId+1
         colonneData.forEach((item) => {
           if (item.id_colonne > maxId) {
             maxId = item.id_colonne;
           }
+        
         });
+        let newId=maxId+1
         KanbanTest.addBoards([
           {
             'id': "board"+newId,
